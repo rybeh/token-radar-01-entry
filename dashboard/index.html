@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar: pre-token protocols ranked by implied launch value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#board">Skip to the board</a>
+<main id="app">
+  <div class="topbar">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="wordmark">TOKEN LAUNCH <span>RADAR</span></div>
+    <div class="spacer"></div>
+    <span class="chip" id="model-chip">model <b>comps-1</b></span>
+    <span class="chip" id="asof-chip">snapshot <b>…</b></span>
+  </div>
+
+  <h1 class="headline">Which pre-token protocol is <em>worth farming next</em> — and what its launch would be worth</h1>
+  <p class="sub">Every protocol in the sealed snapshot that records no token yet, priced by the launches of
+  comparable protocols that already trade, and ranked by that implied value. Each row carries the steps to farm it.
+  Protocols whose token already trades are never ranked: they sit apart, at the market's own values, and their
+  prices are the comparables this board is built from.</p>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <div class="tabs" role="tablist" id="tabs">
+      <button role="tab" data-tab="board" aria-selected="true">Board</button>
+      <button role="tab" data-tab="live" aria-selected="false">Already trading</button>
+      <button role="tab" data-tab="method" aria-selected="false">How the value is derived</button>
+    </div>
+    <input type="search" id="q" placeholder="Search name or slug…" aria-label="Search protocols">
+    <select id="category" aria-label="Filter by category"></select>
+    <select id="chain" aria-label="Filter by chain"></select>
+    <label class="toggle"><input type="checkbox" id="watch"> Watchlist only</label>
+    <span class="count" id="count"></span>
+  </div>
+
+  <section id="board" tabindex="-1"></section>
+  <p class="foot" id="foot"></p>
+</main>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
